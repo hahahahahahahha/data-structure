@@ -31,6 +31,11 @@ const routes = [
         component: () => import('@/views/nav-item/nav-mvvm')
       },
       {
+        path: 'navCss',
+        name: 'NavCss',
+        component: () => import('@/views/nav-item/nav-css')
+      }, 
+      {
         path: 'nav1',
         name: 'Nav1',
         component: () => import('@/views/nav-item/nav-1')

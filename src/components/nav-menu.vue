@@ -45,6 +45,11 @@
           <span slot="title">MVVM</span>
         </el-menu-item>
 
+        <el-menu-item index="4" @click="gotoRouter('/navCss')">
+          <i class="el-icon-menu"></i>
+          <span slot="title">CSS布局</span>
+        </el-menu-item>
+
 
         <!-- <el-menu-item index="3" @click="gotoRouter('/nav2')">
           <i class="el-icon-menu"></i>
@@ -64,7 +69,10 @@
         </el-menu-item> -->
       </el-menu>
     </el-col>
-    <router-view></router-view>
+
+    <el-col :span="20"> 
+      <router-view></router-view>
+   </el-col>
   </el-row>
 </div>
 </template>
@@ -98,5 +106,8 @@ export default {
 }
 .el-menu-vertical-demo {
   height: 100vh;
+}
+.right {
+  margin-left: 220px;
 }
 </style>
