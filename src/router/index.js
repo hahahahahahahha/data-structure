@@ -20,6 +20,17 @@ const routes = [
         component: () => import('@/views/nav-item/nav-link-list')
       },
       {
+        path: 'linkListQuestion',
+        name: 'LinkListQuestion',
+        component: () => import('@/views/nav-item/nav-link-list-question')
+      },
+      // 
+      {
+        path: 'mvvm',
+        name: 'Mvvm',
+        component: () => import('@/views/nav-item/nav-mvvm')
+      },
+      {
         path: 'nav1',
         name: 'Nav1',
         component: () => import('@/views/nav-item/nav-1')

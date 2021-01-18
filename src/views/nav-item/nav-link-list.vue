@@ -1,11 +1,16 @@
 <template>
   <div class="container">
-    linkList
-    <!-- <el-button class="margin-btn" type="primary" size="small" @click="initClick">init</el-button> -->
+    <h6 class="text-center">单向链表</h6>
     <el-button class="margin-btn" type="primary" size="small" @click="addClick">add</el-button>
     <el-button class="margin-btn" type="primary" size="small" @click="deleteClick">delete</el-button>
-    <el-button class="margin-btn" type="primary" size="small" @click="updateClick">update</el-button>
     <el-button class="margin-btn" type="primary" size="small" @click="findClick">find</el-button>
+    <el-button class="margin-btn" type="primary" size="small" @click="testClick">test</el-button>
+    <div class="test"><span>test</span></div>
+    <hr>
+    <h6 class="text-center">双向链表</h6>
+    <hr>
+    <h6 class="text-center">循环链表</h6>
+    <hr>
   </div>
 </template>
 
@@ -30,6 +35,13 @@ export default {
     this.initClick()
   },
   methods: {
+    testClick() {
+      const ele = document.getElementsByClassName('test')[0]
+      ele.innerHTML = '娃哈哈'
+      // ele.innerText = '娃哈哈'
+      console.log(ele)
+
+    },
     // 打印
     printLinkList() {
      console.log(this.link.toString())
@@ -49,10 +61,6 @@ export default {
       // console.log('delete', node);
       this.printLinkList()
     },
-    // 改
-    updateClick() {
-      this.printLinkList()
-    },
     // 查
     findClick() {
       const node = this.link.find(5)
@@ -67,5 +75,9 @@ export default {
 <style lang="scss" scoped>
 .margin-btn {
   margin: 20px;
+}
+.text-center {
+  line-height: 40px;
+  text-align: center;
 }
 </style>

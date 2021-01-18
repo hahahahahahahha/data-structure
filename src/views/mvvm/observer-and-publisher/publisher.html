@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>publisher</div>
+  <script src="./publisher.js"></script>
+  <script>
+    // 测试
+    pubSub.sunScribe('name', name=> {
+      console.log(`your name is ${name}`);
+    })
+    pubSub.sunScribe('gender', gender => {
+        console.log(`your name is ${gender}`);
+    })
+    console.log(pubSub.subs);
+    pubSub.publish('name', 'leaf333');
+    pubSub.publish('gender', '18');
+  </script>
+</body>
+</html>

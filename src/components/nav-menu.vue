@@ -29,34 +29,39 @@
           </el-submenu>
         </el-submenu>
 
-        <el-submenu index="5">
+        <el-submenu index="2">
           <template slot="title">
             <i class="el-icon-location"></i>
             <span>链表</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="5-1" @click="gotoRouter('/linkList')">单向链表</el-menu-item>
-            <el-menu-item index="5-2">双向链表</el-menu-item>
-            <el-menu-item index="5-2">循环链表</el-menu-item>
+            <el-menu-item index="2-1" @click="gotoRouter('/linkList')">单向链表</el-menu-item>
+            <el-menu-item index="2-2" @click="gotoRouter('linkListQuestion')">链表题目</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
 
-        <el-menu-item index="2" @click="gotoRouter('/nav2')">
+        <el-menu-item index="3" @click="gotoRouter('/mvvm')">
+          <i class="el-icon-menu"></i>
+          <span slot="title">MVVM</span>
+        </el-menu-item>
+
+
+        <!-- <el-menu-item index="3" @click="gotoRouter('/nav2')">
           <i class="el-icon-menu"></i>
           <span slot="title">导航二</span>
         </el-menu-item>
-        <el-menu-item index="3"  @click="gotoRouter('/nav3')">
+        <el-menu-item index="4"  @click="gotoRouter('/nav3')">
           <i class="el-icon-document"></i>
           <span slot="title">导航三</span>
         </el-menu-item>
-        <el-menu-item index="4"  @click="gotoRouter('/nav4')">
+        <el-menu-item index="5"  @click="gotoRouter('/nav4')">
           <i class="el-icon-setting"></i>
           <span slot="title">导航四</span>
         </el-menu-item>
-        <el-menu-item index="4"  @click="gotoRouter('/underScore')">
+        <el-menu-item index="6"  @click="gotoRouter('/underScore')">
           <i class="el-icon-setting"></i>
           <span slot="title">导航五</span>
-        </el-menu-item>
+        </el-menu-item> -->
       </el-menu>
     </el-col>
     <router-view></router-view>

@@ -1,5 +1,4 @@
-
-// 节点
+//节点
 class ListNode {
   constructor(key) {
     this.next = null
@@ -28,6 +27,7 @@ class List {
     }
     this.head = node
     this.length++
+
   }
   // 查找 根据key
   find(key) {
@@ -66,7 +66,7 @@ class List {
     return current
       
   }
-  // 
+  
   // 辅助函数
   toString() {
     let current = this.head
@@ -75,11 +75,30 @@ class List {
     while (current) {
       let next = current.next 
       next = next ? next.key : 'null'
-      result += `key: ${current.key}, next: ${next} `
+      result += `[key: ${current.key}, next: ${next}]--> `
       current = current.next
     }
     return `lenght: ${this.length}, ${result}`
   }
+  // 是否空链表
+  isEmpty() {
+    return this.length === 0
+  }
+  // 获取链表长度
+  getSize() {
+    return this.length
+  }
+  // 获取头结点
+  getHead() {
+    return this.head
+  }
+  // 清空链表
+  clear() {
+    this.head = null
+    this.length = 0
+  }
+  // 
+  // 
 }
 
 export {
