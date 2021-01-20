@@ -35,13 +35,22 @@ export default {
     initClick() {
       this.link = new List()
       for (let i = 0; i < 10; i++) {
-        this.link.insert(i)
+        this.link.insertAtTail(i)
       }
       this.printLinkList()
     },
     // 翻转
     reverseClick() {
-      
+      let curNext = this.link.head
+      let curNode = this.link.head
+      let pre = null
+      while (curNode) {
+        curNext = curNode.next
+        curNode.next = pre
+        pre = curNode
+        curNode = curNext
+      }
+      this.link.head = pre
       this.printLinkList()
     }
   }

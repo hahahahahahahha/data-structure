@@ -16,8 +16,8 @@ class List {
     return new ListNode(key)
   }
   // 头插法 
-  // ps: 尾插法、指定索引插入法
-  insert(key) {
+  // 指定索引插入法
+  insertAtHead(key) {
     const node = new ListNode(key)
     // console.log(node);
     if (this.head) {
@@ -27,7 +27,17 @@ class List {
     }
     this.head = node
     this.length++
-
+  }
+  // 尾插法
+  insertAtTail(key) {
+    const newNode = new ListNode(key)
+    let pre = this.findAtIndex(this.length - 1)
+    if (pre ) {
+      pre.next = newNode
+    } else {
+      this.head = newNode
+    }
+    this.length++
   }
   // 查找 根据key
   find(key) {

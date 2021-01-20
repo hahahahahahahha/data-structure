@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <h6 class="text-center">单向链表</h6>
-    <el-button class="margin-btn" type="primary" size="small" @click="addClick">add</el-button>
+    <el-button class="margin-btn" type="primary" size="small" @click="addClick">头插法</el-button>
+    <el-button class="margin-btn" type="primary" size="small" @click="addTailClick">尾插法</el-button>
     <el-button class="margin-btn" type="primary" size="small" @click="deleteClick">delete</el-button>
     <el-button class="margin-btn" type="primary" size="small" @click="findClick">find</el-button>
     <el-button class="margin-btn" type="primary" size="small" @click="testClick">test</el-button>
@@ -52,7 +53,11 @@ export default {
     },
     // 增
     addClick() {
-      this.link.insert(this.value++)
+      this.link.insertAtHead(this.value++)
+      this.printLinkList()
+    },
+    addTailClick() {
+      this.link.insertAtTail(this.value++)
       this.printLinkList()
     },
     // 删
