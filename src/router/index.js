@@ -35,6 +35,12 @@ const routes = [
         name: 'NavCss',
         component: () => import('@/views/nav-item/nav-css')
       }, 
+      // common-question
+      {
+        path: 'navCommon',
+        name: 'NavCommon',
+        component: () => import('@/views/nav-item/nav-common-question')
+      }, 
       {
         path: 'nav1',
         name: 'Nav1',
