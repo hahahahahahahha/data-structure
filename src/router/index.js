@@ -36,6 +36,11 @@ const routes = [
         component: () => import('@/views/nav-item/nav-css')
       }, 
       {
+        path: 'leeteCode',
+        name: 'leeteCode',
+        component: () => import('@/views/nav-item/nav-leete-code')
+      },
+      {
         path: 'nav1',
         name: 'Nav1',
         component: () => import('@/views/nav-item/nav-1')
