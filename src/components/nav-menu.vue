@@ -55,6 +55,10 @@
           <span slot="title">LeetCode</span>
         </el-menu-item>
 
+        <el-menu-item index="5" @click="gotoRouter('/navCommon')">
+          <i class="el-icon-menu"></i>
+          <span slot="title">常见问题</span>
+        </el-menu-item>
         <!-- <el-menu-item index="3" @click="gotoRouter('/nav2')">
           <i class="el-icon-menu"></i>
           <span slot="title">导航二</span>
