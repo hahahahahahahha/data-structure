@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div>
-      LeeteCode
+      leetcode
     </div>
     <p>
-      LeeteCode
+      leetcode
     </p>
-    <span>LeeteCode</span>
+    <span>leetcode</span>
     <el-button class="margin-btn" type="primary" size="small" @click="test1Click">斐波那契数列-递归</el-button>
     <el-button class="margin-btn" type="primary" size="small" @click="test2Click">斐波那契数列-备忘录的递归解法</el-button>
     <el-button class="margin-btn" type="primary" size="small" @click="test3Click">斐波那契数列-动态规划</el-button>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'NavLeeteCode',
+  name: 'Navleetcode',
   components: {},
   mixin: {},
   directives: {},

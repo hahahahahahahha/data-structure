@@ -42,8 +42,8 @@ const routes = [
         component: () => import('@/views/nav-item/nav-common-question')
       }, 
       {
-        path: 'leeteCode',
-        name: 'leeteCode',
+        path: 'leetcode',
+        name: 'leetcode',
         component: () => import('@/views/nav-item/nav-leete-code')
       },
       {

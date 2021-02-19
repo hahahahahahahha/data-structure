@@ -50,7 +50,7 @@
           <span slot="title">CSS布局</span>
         </el-menu-item>
 
-        <el-menu-item index="4" @click="gotoRouter('/leeteCode')">
+        <el-menu-item index="4" @click="gotoRouter('/leetcode')">
           <i class="el-icon-menu"></i>
           <span slot="title">LeetCode</span>
         </el-menu-item>
