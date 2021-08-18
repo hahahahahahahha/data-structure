@@ -26,6 +26,11 @@ const routes = [
       },
       // 
       {
+        path: 'navTree',
+        name: 'navTree',
+        component: () => import('@/views/nav-item/nav-tree')
+      },
+      {
         path: 'mvvm',
         name: 'Mvvm',
         component: () => import('@/views/nav-item/nav-mvvm')
