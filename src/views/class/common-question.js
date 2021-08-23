@@ -2,7 +2,7 @@
  * @Author       : zhuyanglei@xdf.cn
  * @Date         : 2021-01-20 22:52:07
  * @LastEditors  : zhuyanglei@xdf.cn
- * @LastEditTime : 2021-08-17 22:47:53
+ * @LastEditTime : 2021-08-23 20:16:53
  * @Description  : 描述信息
  */
 
@@ -97,3 +97,44 @@ const toTreeData = (list)=>{
    return result
 }
 console.info(JSON.stringify(toTreeData(list)) );
+
+/************************************/
+
+const defineReactive = function (obj, key, val) {
+
+  Object.defineProperty(obj, key,{
+    get() {
+      console.log(`${key}属性被读取了...`);
+      return val
+    },
+    set(newVal) {
+      console.log(`${key}属性被修改了...`);
+      val = newVal
+    }
+  })
+}
+const observable = function (obj) {
+  if (!obj || typeof obj !== 'object') return
+    
+  let keys = Object.keys(obj)
+  keys.forEach((key) => {
+    console.log('key---',key);
+    defineReactive(obj,key,obj[key])
+  })
+  return obj
+}
+let person = observable({
+  name:'tom',
+  age:10,
+  per: {
+    per2:{
+      sex: '男'
+    },
+    height: 190
+  }
+})
+person.per.per2.sex = 'wwwwwwwww--'
+
+console.log(person.per.per2.sex)
+
+/************************************/

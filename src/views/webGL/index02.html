@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style type="text/css">
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+  <canvas id="c"></canvas>
+
+  <script type="text/javascript">
+    document.onclick = function (e) {
+      var e = (e || event);
+      var o = e["target"] || e["srcElement"];
+      alert(o.tagName.toLowerCase());
+      history.pushState({}, "", '/a')
+    }
+    window.onload = () => {
+      window.addEventListener("popstate", () => {
+        const path = window.location.pathname
+        console.log('------', path);
+        alert('----');
+        // 根据path不同可渲染不同的dom
+      })
+    }
+    Object.getOwnPropertyNames(Math).map(function (prop) {
+      window[prop] = Math[prop];
+    });
+
+    var rad = function rad(degree) {
+      return degree * PI / 180;
+    };
+    var deg = function deg(radians) {
+      return radians * 180 / PI;
+    };
+
+    var canvas = document.getElementById('c');
+    var ctx = canvas.getContext('2d');
+
+    var setSize = function setSize() {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    };
+
+    var mouse = {
+      x: canvas.width / 3,
+      y: canvas.height / 4 * 3
+    };
+    var dotSize = 10;
+    var point = {};
+
+    var setMouse = function setMouse(e) {
+      document.body.style.cursor = 'default';
+      for (var i = 1; i <= 5; i++) {
+        if (abs(e.pageX - points[i].x) < dotSize && abs(e.pageY - points[i].y) < dotSize) {
+          document.body.style.cursor = '-webkit-grab';
+          document.body.style.cursor = '-moz-grab';
+        } else { }
+      }
+      if (point.grab) {
+        document.body.style.cursor = '-webkit-grabbing';
+        document.body.style.cursor = '-moz-grabbing';
+        points[point.grab] = {
+          x: e.pageX,
+          y: e.pageY
+        };
+      }
+    };
+    setSize();
+    var points = {
+      1: {
+        x: 0,
+        y: canvas.height / 2
+      },
+      2: {
+        x: canvas.width / 3,
+        y: canvas.height / 2
+      },
+      3: {
+        x: canvas.width / 2,
+        y: canvas.height / 2
+      },
+      4: {
+        x: canvas.width / 3 * 2,
+        y: canvas.height / 2
+      },
+      5: {
+        x: canvas.width,
+        y: canvas.height / 2
+      }
+    };
+    var grabPoint = function grabPoint(e) {
+      for (var i = 1; i <= 5; i++) {
+        if (abs(e.pageX - points[i].x) < dotSize && abs(e.pageY - points[i].y) < dotSize) {
+          document.body.style.cursor = '-webkit-grabbing';
+          document.body.style.cursor = '-moz-grabbing';
+          point.grab = i;
+        }
+      }
+    };
+
+    var releasePoint = function releasePoint(e) {
+      if (point.grab) {
+        document.body.style.cursor = '-webkit-grab';
+        document.body.style.cursor = '-moz-grab';
+      }
+      point.grab = false;
+
+    };
+
+    var draw = function draw() {
+      ctx.fillStyle = 'hsla(0,0%,100%,.5)';
+      ctx.strokeStyle = 'hsla(10%,0%,0%,1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(points[1].x, points[1].y);
+      ctx.lineTo(points[1].x, points[1].y);
+      ctx.lineTo(points[2].x, points[2].y);
+      ctx.lineTo(points[3].x, points[3].y);
+      ctx.lineTo(points[4].x, points[4].y);
+      ctx.lineTo(points[5].x, points[5].y);
+
+      ctx.stroke();
+
+      for (var i = 1; i <= 5; i++) {
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.strokeStyle = 'hsla(' + 360 / 5 * i + ',100%,40%,1)';
+        ctx.fillStyle = 'hsla(0,100%,100%,1)';
+        ctx.arc(points[i].x, points[i].y, dotSize, 0, 2 * PI);
+        ctx.stroke();
+        ctx.fill();
+      }
+      ctx.fillStyle = 'hsla(0,0%,0%,1)';
+      ctx.font = '20px sans-serif';
+      ctx.fillText('Drag the points', 10, 50);
+      requestAnimationFrame(draw);
+    };
+
+    window.addEventListener('resize', setSize);
+    window.addEventListener('mousemove', setMouse);
+    window.addEventListener('mousedown', grabPoint);
+    window.addEventListener('mouseup', releasePoint);
+
+    setSize();
+    draw();
+  </script>
+</body>
+
+</html>

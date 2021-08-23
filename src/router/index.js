@@ -26,6 +26,11 @@ const routes = [
       },
       // 
       {
+        path: 'navTree',
+        name: 'navTree',
+        component: () => import('@/views/nav-item/nav-tree')
+      },
+      {
         path: 'mvvm',
         name: 'Mvvm',
         component: () => import('@/views/nav-item/nav-mvvm')
@@ -41,6 +46,11 @@ const routes = [
         name: 'NavCommon',
         component: () => import('@/views/nav-item/nav-common-question')
       }, 
+      {
+        path: 'leetcode',
+        name: 'leetcode',
+        component: () => import('@/views/nav-item/nav-leete-code')
+      },
       {
         path: 'nav1',
         name: 'Nav1',

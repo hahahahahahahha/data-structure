@@ -40,6 +40,11 @@
           </el-menu-item-group>
         </el-submenu>
 
+        <el-menu-item index="2.1" @click="gotoRouter('/navTree')">
+          <i class="el-icon-menu"></i>
+          <span slot="title">二叉树</span>
+        </el-menu-item>
+
         <el-menu-item index="3" @click="gotoRouter('/mvvm')">
           <i class="el-icon-menu"></i>
           <span slot="title">MVVM</span>
@@ -48,6 +53,11 @@
         <el-menu-item index="4" @click="gotoRouter('/navCss')">
           <i class="el-icon-menu"></i>
           <span slot="title">CSS布局</span>
+        </el-menu-item>
+
+        <el-menu-item index="4" @click="gotoRouter('/leetcode')">
+          <i class="el-icon-menu"></i>
+          <span slot="title">LeetCode</span>
         </el-menu-item>
 
         <el-menu-item index="5" @click="gotoRouter('/navCommon')">
